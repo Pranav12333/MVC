@@ -1,0 +1,72 @@
+/* Style for the header */
+.head_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 5%;
+}
+
+.add_product_link {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Style for the payment section */
+.payment_heading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.add_btn{
+  display: block;
+  margin-right: 30px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+} 
+
+.tabel_container {
+  margin-top: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for the footer */
+.footer_container {
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+}

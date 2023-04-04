@@ -1,0 +1,62 @@
+<?php 
+$salesman = $this->getSalesmen();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edit Salesman</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/edit.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=salesman&a=update&salesman_id=<?php echo $salesman['salesman_id']; ?>">
+		<div class="head_container">
+			<h2 class="edit_heading">EDIT SALESMAN</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=salesman&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>SALESMAN INFORMATION</th>
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td> <input type="text" name="salesman[first_name]" value=<?php echo $salesman['first_name'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td> <input type="text" name="salesman[last_name]" value=<?php echo $salesman['last_name'] ?>> </td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td> <input type="text" name="salesman[email]" value=<?php echo $salesman['email'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<select name="salesman[gender]">
+							<option value="male" <?php if($salesman['gender'] == "male") echo "SELECTED";?>>Male</option>
+							<option value="female" <?php if($salesman['gender'] == "female") echo "SELECTED";?>>Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Mobile</td>
+					<td> <input type="number" name="salesman[mobile]" value=<?php echo $salesman['mobile'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="salesman[status]">
+							<option value="active" <?php if($salesman['status'] == "active") echo "SELECTED";?>>Active</option>
+							<option value="inactive" <?php if($salesman['status'] == "inactive") echo "SELECTED";?>>Inactive</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

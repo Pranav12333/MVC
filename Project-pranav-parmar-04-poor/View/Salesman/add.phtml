@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Salesman</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/add.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=salesman&a=insert">
+		<div class="head_container">
+			<h2 class="add_heading">ADD SALESMAN</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=salesman&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>SALESMAN INFORMATION</th>
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td> <input type="text" name="salesman[first_name]"> </td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td> <input type="text" name="salesman[last_name]"> </td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td> <input type="text" name="salesman[email]"> </td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<select name="salesman[gender]">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Mobile</td>
+					<td> <input type="number" name="salesman[mobile]"> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="salesman[status]">
+							<option value="active">Active</option>
+							<option value="inactive">Inactive</option>
+						</select>
+					</td>
+				</tr>
+			
+			</table>
+		</div>
+	</form>
+</body>
+</html>

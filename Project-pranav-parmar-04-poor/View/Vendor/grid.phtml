@@ -1,0 +1,68 @@
+<?php 
+$vendors = $this->getVendors();
+require_once 'View/html/header.phtml'; 
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Manage Vendor</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/grid.css">
+</head>
+<body>
+	<div class="head_container">
+		<h2 class="logo">MANAGE VENDORS</h2>
+		<a class="add_btn" href="index.php?c=vendor&a=add">ADD VENDOR</a>
+	</div>
+	<div class="tabel_container">
+		<table>
+  			<tr>
+  				<th>Vendor ID</th>
+  				<th>First Name</th>
+  				<th>Last Name</th>
+  				<th>E-mail</th>
+  				<th>Mobile</th>
+  				<th>Gender</th>
+  				<th>Status</th>
+  				<th>Company</th>
+  				<th>Created At</th>
+  				<th>Updated At</th>
+  				<th>EDIT</th>
+  				<th>DELETE</th>
+  			</tr>
+  			<?php 
+			foreach ($vendors as $vendor) {	
+			?>
+			<tr>
+				<td><?php echo $vendor["vendor_id"] ?></td>
+				<td><?php echo $vendor["first_name"] ?></td>
+				<td><?php echo $vendor["last_name"] ?></td>
+				<td><?php echo $vendor["email"] ?></td>
+				<td><?php echo $vendor["mobile"] ?></td>
+				<td><?php echo $vendor["gender"] ?></td>
+				<td>
+                <?php   
+                if ($vendor["status"] === 'active') {
+                    echo "Active";
+                }else{
+                    echo "Inactive";
+                }
+                ?>    
+                </td>
+                <td><?php echo $vendor["company"] ?></td>
+				<td><?php echo $vendor["created_at"] ?></td>
+				<td><?php echo $vendor["updated_at"] ?></td>
+				<td><a style="text-decoration:none;" href="index.php?c=vendor&a=edit&vendor_id=<?php echo $vendor["vendor_id"] ?>">Edit</a></td>
+				<td><a style="text-decoration:none;" href="index.php?c=vendor&a=delete&vendor_id=<?php echo $vendor["vendor_id"] ?>">Delete</a></td>
+			</tr>
+			<?php
+			}
+			?>
+		</table>
+	</div>
+	<div>
+		<?php require_once 'View/html/footer.phtml'; ?>
+	</div>
+</body>
+</html>

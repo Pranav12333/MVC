@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Shipping Method</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/add.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=ShippingMethod&a=insert">
+		<div class="head_container">
+			<h2 class="add_heading">ADD SHIPPING METHOD</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=ShippingMethod&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>SHIPPING INFORMATION</th>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td> <input type="text" name="shipping_method[name]"> </td>
+				</tr>
+				<tr>
+					<td>Amount</td>
+					<td> <input type="number" name="shipping_method[amount]"> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="shipping_method[status]">
+							<option value="active">Active</option>
+							<option value="inactive">Inactive</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

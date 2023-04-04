@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Prouct</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/add.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=product&a=insert">
+		<div class="head_container">
+			<h2 class="add_heading">ADD PRODUCT</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=product&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>PRODUCT INFORMATION</th>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td> <input type="text" name="product[name]"> </td>
+				</tr>
+				<tr>
+					<td>SKU ID</td>
+					<td> <input type="number" name="product[sku]"> </td>
+				</tr>
+				<tr>
+					<td>Cost</td>
+					<td> <input type="number" name="product[cost]"> </td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td> <input type="number" name="product[price]"> </td>
+				</tr>
+				<tr>
+					<td>Quantity</td>
+					<td> <input type="number" name="product[quantity]"> </td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td> <textarea name="product[description]"></textarea> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="product[status]">
+							<option value="active">Active</option>
+							<option value="inactive">Inactive</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Color</td>
+					<td> 
+						<select name="product[color]">
+							<option value="Color2">Color1</option>
+							<option value="Color1">Color2</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Material</td>
+					<td> <input type="text" name="product[material]"> </td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?php 
+$shipping = $this->getShippings();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edit Shipping Method</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/edit.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=shippingmethod&a=update&shipping_method_id=<?php echo $shipping['shipping_method_id'] ?>">
+		<div class="head_container">
+			<h2 class="edit_heading">EDIT SHIPPING METHOD</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=shippingmethod&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>SHIPPING INFORMATION</th>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td> <input type="text" name="shipping_method[name]" value=<?php echo $shipping['name'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Amount</td>
+					<td> <input type="number" name="shipping_method[amount]" value=<?php echo $shipping['amount'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="shipping_method[status]">
+							<option value="active" <?php if($shipping['status'] == "active") echo "SELECTED";?>>Active</option>
+							<option value="inactive" <?php if($shipping['status'] == "inactive") echo "SELECTED";?>>Inactive</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

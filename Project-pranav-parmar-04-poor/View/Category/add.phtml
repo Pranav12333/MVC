@@ -1,0 +1,45 @@
+<?php 
+$categories = $this->getCategories();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Category</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/add.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=category&a=insert">
+		<div class="head_container">
+			<h2 class="add_heading">ADD CATEGORY</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=category&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+	<div class="tabel_container">
+		<table>
+			<tr>
+				<th>CATEGORY INFORMATION</th>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td> <input type="text" name="category[name]"> </td>
+			</tr>
+			<tr>
+				<td>Status</td>
+				<td>
+					<select name="category[status]">
+						<option value="active">Active</option>
+						<option value="inactive">Inactive</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td> <textarea name="category[description]"></textarea> </td>
+			</tr>
+		</table>
+	</div>
+</form>	
+</body>
+</html>

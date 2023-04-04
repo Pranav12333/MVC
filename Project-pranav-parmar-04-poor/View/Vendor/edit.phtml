@@ -1,0 +1,69 @@
+<?php 
+$vendor = $this->getVendors();
+?>
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edit Vendor</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/edit.css">
+</head>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="skin/css/style.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=vendor&a=update&vendor_id=<?php echo $vendor['vendor_id']; ?>">
+		<div class="head_container">
+			<h2 class="edit_heading">EDIT VENDOR</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=vendor&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>VENDOR INFORMATION</th>	
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td> <input type="text" name="vendor[first_name]" value=<?php echo $vendor['first_name'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td> <input type="text" name="vendor[last_name]" value=<?php echo $vendor['last_name'] ?>> </td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td> <input type="text" name="vendor[email]" value=<?php echo $vendor['email'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<select name="vendor[gender]">
+							<option value="male" <?php if($vendor['gender'] == "male") echo "SELECTED";?>>Male</option>
+							<option value="female" <?php if($vendor['gender'] == "female") echo "SELECTED";?>>Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Mobile</td>
+					<td> <input type="number" name="vendor[mobile]" value=<?php echo $vendor['mobile'] ?>> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="vendor[status]">
+							<option value="active" <?php if($vendor['status'] == "active") echo "SELECTED";?>>Active</option>
+							<option value="inactive" <?php if($vendor['status'] == "inactive") echo "SELECTED";?>>Inactive</option>
+						</select>
+					</td>
+				</tr>
+			
+			</table>
+		</div>
+	</form>
+</body>
+</html>

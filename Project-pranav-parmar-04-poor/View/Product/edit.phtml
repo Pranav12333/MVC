@@ -1,0 +1,68 @@
+<?php 
+$product = $this->getProducts();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="skin/css/edit.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=product&a=update&product_id=<?php echo $product['product_id'];?>">
+		<div class="head_container">
+			<h2 class="edit_heading">EDIT PRODUCT</h2>
+			<a class="cancel_link" type="cancel" href="index.php?c=product&a=grid">CANCEL</a>
+			<input class="save_link" type="submit" value="Save">
+		</div>
+		<div class="tabel_container">
+			<table>
+				<tr>
+					<th>PRODUCT INFORMATION</th>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td> <input type="text" name="product[name]" value="<?php echo $product['name']; ?>"> </td>
+				</tr><tr>
+					<td>SKU ID</td>
+					<td> <input type="text" name="product[sku]" value="<?php echo $product['sku']; ?>"> </td>
+				</tr>
+				<tr>
+					<td>Cost</td>
+					<td> <input type="number" name="product[cost]" value="<?php echo $product['cost']; ?>"> </td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td> <input type="number" name="product[price]" value="<?php echo $product['price']; ?>"> </td>
+				</tr>
+				<tr>
+					<td>Quantity</td>
+					<td> <input type="number" name="product[quantity]" value="<?php echo $product['quantity']; ?>"> </td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td> <textarea name="product[description]"><?php echo $product['description']; ?></textarea> </td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>
+						<select name="product[status]" value="<?php echo $product['status']; ?>">
+							<option value="active" <?php if($product['status'] == "active") echo "SELECTED";?>>Active</option>
+							<option value="inactive" <?php if($product['status'] == "inactive") echo "SELECTED";?>>Inactive</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Color</td>
+					<td> <input type="text" name="product[color]" value="<?php echo $product['color']; ?>"> </td>
+				</tr>
+				<tr>
+					<td>Material</td>
+					<td> <input type="text" name="product[material]" value="<?php echo $product['material']; ?>"> </td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?php 
+$category = $this->getCategories();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edit Category</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/edit.css">
+</head>
+<body>
+	<form method="POST" action="index.php?c=category&a=update&category_id=<?php echo $category['category_id']; ?>">
+	<div class="head_container">
+		<h2 class="edit_heading">EDIT CATEGORY</h2>
+		<a class="cancel_link" type="cancel" href="index.php?c=category&a=grid">CANCEL</a>
+		<input class="save_link" type="submit" value="Save">
+	</div>
+	<div class="tabel_container">
+		<table>
+			<tr>
+				<th>CATEGORY INFORMATION</th>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td> <input type="text" name="category[name]" value=<?php echo $category['name'] ?>> </td>
+			</tr>
+			<tr>
+				<td>Status</td>
+				<td>
+					<select name="category[status]">
+						<option value="active" <?php if($category['status'] == "active") echo "SELECTED";?>>Active</option>
+						<option value="inactive" <?php if($category['status'] == "inactive") echo "SELECTED";?>>Inactive</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td> <textarea name="category[description]"><?php echo $category['description']; ?></textarea> </td>
+			</tr>
+		</table>
+	</div>
+</form>
+</body>
+</html>

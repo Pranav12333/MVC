@@ -1,0 +1,69 @@
+<?php
+require_once 'Model/Core/Url.php' ;
+// require_once 'Model/Core/Message.php' ;
+
+// $message = new Model_Core_Message();
+// $messages = $messageModel->getMessages();
+
+// if ($messages) {
+// 	foreach ($messages as $type => $message) {
+// 		echo $message; 
+// 		echo"</p>";
+// 	}
+// }
+
+?>
+<style>
+.up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.sub_head {
+  margin: 0px 20px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  margin: 25px;
+}
+
+.head_link {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.head_link:hover {
+  color: blue;
+}
+
+}
+
+</style>
+
+<div align="center" class="up">
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=product" class="head_link"> Product </a>	
+	</div>
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=category" class="head_link"> Category </a>
+	</div>
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=customer" class="head_link"> Customer </a>
+	</div>	
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=salesman" class="head_link"> Salesman </a>
+	</div>
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=vendor" class="head_link"> Vendor </a>
+	</div>
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=ShippingMethod" class="head_link"> Shipping method </a>
+	</div>
+	<div class="sub_head">
+		<a style="text-decoration:none;" href="http://localhost/Project/index.php?a=grid&c=PaymentMethod" class="head_link"> Payment method </a>
+	</div>
+</div>	

@@ -1,0 +1,63 @@
+<?php 
+$customer = $this->getCustomeres();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edit Customer</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/edit.css">
+</head>
+<form method="POST" action="index.php?c=customer&a=update&customer_id=<?php echo $customer['customer_id']; ?>">
+	<div class="head_container">
+		<h2 class="edit_heading">EDIT CUSTOMER</h2>
+		<a class="cancel_link" type="cancel" href="index.php?c=customer&a=grid">CANCEL</a>
+		<input class="save_link" type="submit" value="Save">
+	</div>
+	<div class="tabel_container">
+		<table>
+			<tr>
+				<th>CUSTOMER INFORMATION</th>
+			</tr>
+			<tr>
+				<td>First Name</td>
+				<td> <input type="text" name="customer[first_name]" value=<?php echo $customer['first_name'] ?>> </td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td> <input type="text" name="customer[last_name]" value=<?php echo $customer['last_name'] ?>> </td>
+			</tr>
+			<tr>
+				<td>E-mail</td>
+				<td> <input type="text" name="customer[email]" value=<?php echo $customer['email'] ?>> </td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<select name="customer[gender]">
+						<option value="male" <?php if($customer['gender'] == "male") echo "SELECTED";?>>Male</option>
+						<option value="female" <?php if($customer['gender'] == "female") echo "SELECTED";?>>Female</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Mobile</td>
+				<td> <input type="number" name="customer[mobile]" value=<?php echo $customer['mobile'] ?>> </td>
+			</tr>
+			<tr>
+				<td>Status</td>
+				<td>
+					<select name="customer[status]">
+						<option value="active" <?php if($customer['status'] == "active") echo "SELECTED";?>>Active</option>
+						<option value="inactive" <?php if($customer['status'] == "inactive") echo "SELECTED";?>>Inactive</option>
+					</select>
+				</td>
+			</tr>
+		
+		</table>
+	</div>
+</form>
+</body>
+</html>
